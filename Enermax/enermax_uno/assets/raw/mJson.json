@@ -1,0 +1,42 @@
+{
+    "previous": "Some URL for previous page",
+    "next": "Some URL for next page",
+    "results": [
+        {
+            "folio": "001",
+            "tipo": "Pedido",
+            "cliente": "Martha Sanchez",
+            "pieza": "001" 
+        },
+        {
+            "folio": "002",
+            "tipo": "Recoleccion",
+            "cliente": "Eduardo Nuñes",
+            "pieza": "005" 
+        },
+        {
+            "folio": "003",
+            "tipo": "Recoleccion",
+            "cliente": "Alvarado Piña",
+            "pieza": "001" 
+        },
+        {
+            "folio": "004",
+            "tipo": "Pedido",
+            "cliente": "Esther Marquez",
+            "pieza": "002" 
+        },
+        {
+            "folio": "005",
+            "tipo": "Rechazo",
+            "cliente": "Hector Vazquez",
+            "pieza": "001" 
+        },
+        {
+            "folio": "006",
+            "tipo": "Pedido",
+            "cliente": "Ines Ruvalcaba",
+            "pieza": "002" 
+        }
+    ]
+}
