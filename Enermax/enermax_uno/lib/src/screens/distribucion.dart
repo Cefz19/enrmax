@@ -1,7 +1,7 @@
-import 'package:ener_prueba/src/screens/paginas_screen.dart';
-import 'package:ener_prueba/src/widgets/tables.dart';
 import 'package:flutter/material.dart';
-import 'package:ener_prueba/src/widgets/animated_sync.dart';
+
+import '../widgets/animated_sync.dart';
+import 'package:enermax_uno/src/screens/paginas_screen.dart';
 
 class Distribucion extends StatefulWidget {
   const Distribucion({Key? key}) : super(key: key);
@@ -64,7 +64,7 @@ class _DistribucionState extends State<Distribucion>
         ],
         centerTitle: true,
       ),
-      body: const Tables(),
+      body: Table(),
     );
   }
 }

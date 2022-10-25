@@ -1,7 +1,8 @@
-import 'package:ener_prueba/src/navbottom/check_box.dart';
-import 'package:ener_prueba/src/widgets/columns_rows.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+
+import '../navbottom/check_box.dart';
+import 'columns_rows.dart';
 
 class Tables extends StatelessWidget {
   const Tables({Key? key}) : super(key: key);

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import 'package:ener_prueba/src/screens/paginas_screen.dart';
+import 'package:enermax_uno/src/screens/screen_drawer.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 
 class Transito extends StatelessWidget {

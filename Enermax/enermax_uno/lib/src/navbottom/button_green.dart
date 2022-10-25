@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import 'package:ener_prueba/src/screens/menu_route.dart';
+import '../screens/menu_route.dart';
 
 // ignore: must_be_immutable
 class ButtonGreen extends StatelessWidget {

@@ -1,4 +1,4 @@
-import 'package:ener_prueba/src/screens/screen_login_password.dart';
+import 'package:enermax_uno/src/screens/screen_login_password.dart';
 import 'package:flutter/material.dart';
 
 class ScreenSplash extends StatefulWidget {

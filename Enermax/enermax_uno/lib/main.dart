@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-import 'package:ener_prueba/src/screens/screen_splash.dart';
-import 'package:ener_prueba/src/screens/screen_login_password.dart';
+import 'package:enermax_uno/src/screens/screen_login_password.dart';
+import 'package:enermax_uno/src/screens/screen_splash.dart';
 
 void main() {
   runApp(const MyApp());

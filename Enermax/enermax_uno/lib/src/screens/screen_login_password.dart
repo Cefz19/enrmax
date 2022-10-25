@@ -1,6 +1,6 @@
-import 'package:ener_prueba/src/navbottom/button_green.dart';
 import 'package:flutter/material.dart';
 
+import '../navbottom/button_green.dart';
 import '../navbottom/input_decoration.dart';
 
 class ScreenLoginPassword extends StatelessWidget {

@@ -1,5 +1,6 @@
-import 'package:ener_prueba/src/screens/paginas_screen.dart';
 import 'package:flutter/material.dart';
+
+import 'package:enermax_uno/src/screens/paginas_screen.dart';
 
 class Manifiesto extends StatelessWidget {
   const Manifiesto({Key? key}) : super(key: key);

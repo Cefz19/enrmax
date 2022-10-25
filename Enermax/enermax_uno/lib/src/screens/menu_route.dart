@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 import 'package:curved_navigation_bar/curved_navigation_bar.dart';
-import 'package:ener_prueba/src/screens/paginas_screen.dart';
+import 'package:enermax_uno/src/screens/paginas_screen.dart';
 
 class MenuRoute extends StatefulWidget {
   const MenuRoute({Key? key}) : super(key: key);
