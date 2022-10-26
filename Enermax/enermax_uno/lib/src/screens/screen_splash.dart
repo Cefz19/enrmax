@@ -44,7 +44,7 @@ class _SplashScreenState extends State<ScreenSplash> {
             child: Column(
               children: [
                 Container(
-                  margin: const EdgeInsets.only(top: 200),
+                  margin: const EdgeInsets.only(top: 115),
                   width: double.infinity,
                   child: const Image(
                     image: AssetImage('assets/imagenes/logo.png'),

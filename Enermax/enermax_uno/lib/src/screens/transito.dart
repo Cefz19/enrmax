@@ -30,7 +30,7 @@ class Transito extends StatelessWidget {
           width: MediaQuery.of(context).size.width,
           child: const GoogleMap(
             initialCameraPosition:
-                CameraPosition(target: LatLng(21.12908, 101.67374), zoom: 16.0),
+                CameraPosition(target: LatLng(21.1236, 101.68), zoom: 10.0),
             zoomGesturesEnabled: true,
           ),
         )
