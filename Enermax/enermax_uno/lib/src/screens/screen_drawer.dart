@@ -21,7 +21,7 @@ class ScreenDrawer extends StatelessWidget {
                     bottomLeft: Radius.circular(15.0),
                     bottomRight: Radius.circular(15.0)),
                 image: DecorationImage(
-                  image: AssetImage('assest/imagenes/logo.png'),
+                  image: AssetImage('assets/imagenes/logo.png'),
                 ),
               ),
               child: Align(

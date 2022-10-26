@@ -25,10 +25,10 @@ class ScreenLoginPassword extends StatelessWidget {
     return SingleChildScrollView(
       child: Column(
         children: [
-          const SizedBox(height: 350),
+          const SizedBox(height: 202),
           Container(
-            padding: const EdgeInsets.all(20.0),
-            margin: const EdgeInsets.symmetric(horizontal: 30),
+            padding: const EdgeInsets.all(10.0),
+            margin: const EdgeInsets.symmetric(horizontal: 20),
             width: double.infinity,
             //height: 340,
             decoration: BoxDecoration(
@@ -86,7 +86,7 @@ class ScreenLoginPassword extends StatelessWidget {
                         },
                       ),
                       const SizedBox(
-                        height: 30,
+                        height: 15,
                       ),
                       ButtonGreen('Inicio')
                     ],
@@ -108,10 +108,10 @@ class ScreenLoginPassword extends StatelessWidget {
   SafeArea iconoLogo() {
     return SafeArea(
       child: Container(
-        margin: const EdgeInsets.only(top: 150),
+        margin: const EdgeInsets.only(top: 105),
         width: double.infinity,
         child: const Image(
-          image: AssetImage('assest/imagenes/logo1.png'),
+          image: AssetImage('assets/imagenes/logo1.png'),
         ),
       ),
     );
