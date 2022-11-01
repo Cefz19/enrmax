@@ -4,6 +4,8 @@
         android:label="enermax_uno"
         android:name="${applicationName}"
         android:icon="@mipmap/ic_launcher">
+        <meta-data android:name="com.google.android.geo.API_KEY"
+            android:value="AIzaSyDRv2ENELq_mXm-SV_NRlg5k9azu6op9wY"/> 
         <activity
             android:name=".MainActivity"
             android:exported="true"
@@ -29,9 +31,7 @@
              This is used by the Flutter tool to generate GeneratedPluginRegistrant.java -->
         <meta-data
             android:name="flutterEmbedding"
-            android:value="2" />
-            <meta-data android:name="com.google.android.geo.API_KEY"
-                android:value="AIzaSyDRv2ENELq_mXm-SV_NRlg5k9azu6op9wY"/>                  
+            android:value="2" />                 
     </application>
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
 </manifest>
