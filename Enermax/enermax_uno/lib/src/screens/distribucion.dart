@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 import '../widgets/animated_sync.dart';
 import 'package:enermax_uno/src/screens/paginas_screen.dart';
+import 'package:enermax_uno/src/widgets/tables_rows.dart';
 
 class Distribucion extends StatefulWidget {
   const Distribucion({Key? key}) : super(key: key);
@@ -64,7 +65,7 @@ class _DistribucionState extends State<Distribucion>
         ],
         centerTitle: true,
       ),
-      body: Table(),
+      body: const TablesRows(),
     );
   }
 }
