@@ -24,74 +24,109 @@ class _TablesRowsState extends State<TablesRows> {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
-        body: SfDataGrid(
-          source: _distribucionDataGridSource,
-          selectionMode: SelectionMode.multiple,
-          allowSorting: true,
-          columns: <GridColumn>[
-            GridColumn(
-                columnName: 'Id',
-                label: Container(
-                  padding: const EdgeInsets.symmetric(horizontal: 16.0),
-                  alignment: Alignment.centerLeft,
-                  child: const Text(
-                    'Id',
-                    overflow: TextOverflow.ellipsis,
+          body: Column(
+        children: <Widget>[
+          Container(
+            margin: const EdgeInsets.all(12.0),
+            child: Row(
+              children: <Widget>[
+                SizedBox(
+                  height: 40.0,
+                  width: 150.0,
+                  child: MaterialButton(
+                      color: Colors.greenAccent,
+                      child: const Text(
+                        'Guardar',
+                        style: TextStyle(
+                            color: Colors.white54,
+                            fontFamily: 'Barlow',
+                            fontSize: 14.0),
+                      ),
+                      onPressed: () {}),
+                ),
+                Expanded(
+                  child: SfDataGrid(
+                    source: _distribucionDataGridSource,
+                    columnSizer: ColumnSizeController(),
+                    columnWidthMode: ColumnWidthMode.auto,
+                    allowSorting: true,
+                    columns: <GridColumn>[
+                      GridColumn(
+                          columnName: 'Id',
+                          label: Container(
+                            padding:
+                                const EdgeInsets.symmetric(horizontal: 16.0),
+                            alignment: Alignment.centerLeft,
+                            child: const Text(
+                              'Id',
+                              overflow: TextOverflow.ellipsis,
+                            ),
+                          )),
+                      GridColumn(
+                          maximumWidth: 400,
+                          minimumWidth: 200,
+                          columnName: 'Folio',
+                          label: Container(
+                            padding:
+                                const EdgeInsets.symmetric(horizontal: 16.0),
+                            alignment: Alignment.centerLeft,
+                            child: const Text(
+                              'Folio',
+                              overflow: TextOverflow.ellipsis,
+                            ),
+                          )),
+                      GridColumn(
+                          columnName: 'tipo',
+                          label: Container(
+                            padding:
+                                const EdgeInsets.symmetric(horizontal: 16.0),
+                            alignment: Alignment.centerLeft,
+                            child: const Text(
+                              'Tipo',
+                              overflow: TextOverflow.ellipsis,
+                            ),
+                          )),
+                      GridColumn(
+                          columnName: 'cliente',
+                          label: Container(
+                            padding:
+                                const EdgeInsets.symmetric(horizontal: 16.0),
+                            alignment: Alignment.centerLeft,
+                            child: const Text(
+                              'Cliente',
+                              overflow: TextOverflow.ellipsis,
+                            ),
+                          )),
+                      GridColumn(
+                          columnName: 'pieza',
+                          label: Container(
+                            padding:
+                                const EdgeInsets.symmetric(horizontal: 16.0),
+                            alignment: Alignment.centerLeft,
+                            child: const Text(
+                              'Pieza',
+                              overflow: TextOverflow.ellipsis,
+                            ),
+                          )),
+                      GridColumn(
+                          columnName: 'entregado',
+                          label: Container(
+                            padding:
+                                const EdgeInsets.symmetric(horizontal: 16.0),
+                            alignment: Alignment.centerLeft,
+                            child: const Text(
+                              'Entregado',
+                              overflow: TextOverflow.ellipsis,
+                            ),
+                          )),
+                    ],
                   ),
-                )),
-            GridColumn(
-                columnName: 'Folio',
-                label: Container(
-                  padding: const EdgeInsets.symmetric(horizontal: 16.0),
-                  alignment: Alignment.centerLeft,
-                  child: const Text(
-                    'Folio',
-                    overflow: TextOverflow.ellipsis,
-                  ),
-                )),
-            GridColumn(
-                columnName: 'Tipo',
-                label: Container(
-                  padding: const EdgeInsets.symmetric(horizontal: 16.0),
-                  alignment: Alignment.centerLeft,
-                  child: const Text(
-                    'Tipo',
-                    overflow: TextOverflow.ellipsis,
-                  ),
-                )),
-            GridColumn(
-                columnName: 'Cliente',
-                label: Container(
-                  padding: const EdgeInsets.symmetric(horizontal: 16.0),
-                  alignment: Alignment.centerLeft,
-                  child: const Text(
-                    'Cliente',
-                    overflow: TextOverflow.ellipsis,
-                  ),
-                )),
-            GridColumn(
-                columnName: 'Pieza',
-                label: Container(
-                  padding: const EdgeInsets.symmetric(horizontal: 16.0),
-                  alignment: Alignment.centerLeft,
-                  child: const Text(
-                    'Pieza',
-                    overflow: TextOverflow.ellipsis,
-                  ),
-                )),
-            GridColumn(
-                columnName: 'Entregado',
-                label: Container(
-                  padding: const EdgeInsets.symmetric(horizontal: 16.0),
-                  alignment: Alignment.centerLeft,
-                  child: const Text(
-                    'Entregado',
-                    overflow: TextOverflow.ellipsis,
-                  ),
-                )),
-          ],
-        ),
-      ),
+                ),
+              ],
+            ),
+          )
+        ],
+      )),
     );
   }
 
@@ -131,21 +166,33 @@ class DistribucionDataGridSource extends DataGridSource {
   List<DataGridRow> get rows => dataGridRows;
 
   @override
-  DataGridRowAdapter buildRow(DataGridRow row) {
+  DataGridRowAdapter? buildRow(DataGridRow row) {
     return DataGridRowAdapter(
-        cells: row.getCells().map<Widget>((dataGridCell) {
+        cells: row.getCells().map<Widget>((dataCell) {
       return Container(
         padding: const EdgeInsets.symmetric(horizontal: 16.0),
-        alignment: (dataGridCell.columnName == 'id' ||
-                dataGridCell.columnName == 'entregado')
-            ? Alignment.centerLeft
-            : Alignment.centerRight,
+        alignment:
+            (dataCell.columnName == 'id' || dataCell.columnName == 'entregado')
+                ? Alignment.centerLeft
+                : Alignment.centerRight,
         child: Text(
-          dataGridCell.value.toString(),
+          dataCell.value.toString(),
           overflow: TextOverflow.ellipsis,
         ),
       );
     }).toList());
+  }
+}
+
+class ColumnSizeController extends ColumnSizer {
+  @override
+  double computeCellWidth(
+    GridColumn column,
+    DataGridRow row,
+    Object? cellValue,
+    TextStyle textStyle,
+  ) {
+    return column.maximumWidth;
   }
 }
 
