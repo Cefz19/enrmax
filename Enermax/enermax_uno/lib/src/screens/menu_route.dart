@@ -14,7 +14,7 @@ class _MenuRouteState extends State<MenuRoute> {
   final navigationKey = GlobalKey<CurvedNavigationBarState>();
   int index = 0;
 
-  final screen = [const Distribucion(), const Manifiesto(), const Transito()];
+  final screen = [const Disribucion(), const Manifiesto(), const Transito()];
   @override
   Widget build(BuildContext context) {
     final items = [

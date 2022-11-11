@@ -1,70 +1,49 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 
-import '../widgets/animated_sync.dart';
-import 'package:enermax_uno/src/screens/paginas_screen.dart';
+import '../../main.dart';
+import '../rows_tables/sopor_table_page/sopor_table_page.dart';
+import '../rows_tables/widget2/tab_bar_widget.dart';
 
-class Distribucion extends StatefulWidget {
-  const Distribucion({Key? key}) : super(key: key);
+Future main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await SystemChrome.setPreferredOrientations(
+      [DeviceOrientation.portraitUp, DeviceOrientation.portraitDown]);
 
-  @override
-  State<Distribucion> createState() => _DistribucionState();
+  runApp(const MyApp());
 }
 
-class _DistribucionState extends State<Distribucion>
-    with SingleTickerProviderStateMixin {
-  late AnimationController controller;
-  late Animation colorAnimatin;
-  late Animation rotateAnimation;
+class Disribucion extends StatelessWidget {
+  static const String title = 'Data Table';
 
-  Future<bool> syncDatabaseFull() async {
-    await Future.delayed(const Duration(seconds: 5), () {});
-    return Future.value(true);
-  }
+  const Disribucion({super.key});
 
   @override
-  void initState() {
-    controller = AnimationController(
-        vsync: this, duration: const Duration(seconds: 200));
-    rotateAnimation =
-        Tween<dynamic>(begin: 0.0, end: 360.0).animate(controller);
+  Widget build(BuildContext context) => MaterialApp(
+        debugShowCheckedModeBanner: false,
+        title: title,
+        theme: ThemeData(primarySwatch: Colors.deepOrange),
+        home: const MainPage(),
+      );
+}
 
-    super.initState();
-  }
+class MainPage extends StatefulWidget {
+  const MainPage({super.key});
 
   @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      drawer: const ScreenDrawer(),
-      appBar: AppBar(
-        title: const Text(
-          'Distribucíon',
-          style: TextStyle(
-              fontFamily: 'Barlow', fontSize: 18.0, color: Colors.white),
-        ),
-        flexibleSpace: Container(
-          decoration: const BoxDecoration(
-            gradient: LinearGradient(
-              colors: [
-                Color(0xFF6E86E7),
-                Color(0xE3005CA7),
-              ],
-            ),
-          ),
-        ),
-        actions: <Widget>[
-          AnimatedSync(
-            animation: rotateAnimation,
-            callback: () async {
-              controller.forward();
-              await syncDatabaseFull();
-              controller.stop();
-              controller.reset();
-            },
-          ),
-        ],
-        centerTitle: true,
-      ),
-      body: const Text('Hello'),
-    );
-  }
+  State<MainPage> createState() => _MainPageState();
+}
+
+class _MainPageState extends State<MainPage> {
+  @override
+  Widget build(BuildContext context) =>
+      TabBarWidget(title: Disribucion.title, tabs: const [
+        Tab(icon: Icon(Icons.sort_by_alpha), text: 'Sortable'),
+        Tab(icon: Icon(Icons.select_all), text: 'Selectable'),
+        Tab(icon: Icon(Icons.edit), text: 'Editable'),
+      ], children: [
+        const SoporTablePage(),
+        Container(),
+        Container(),
+      ]);
 }
