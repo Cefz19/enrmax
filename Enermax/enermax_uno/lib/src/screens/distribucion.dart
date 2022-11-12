@@ -14,7 +14,7 @@ Future main() async {
 }
 
 class Disribucion extends StatelessWidget {
-  static const String title = 'Data Table';
+  static const String title = 'Distribucion';
 
   const Disribucion({super.key});
 
